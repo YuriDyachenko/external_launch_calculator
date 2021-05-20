@@ -13,12 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.extra_calculator).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent("dyachenko.androidbeginnercalculator");
-                startActivity(intent);
-            }
+        findViewById(R.id.extra_calculator).setOnClickListener(v -> {
+            Intent intent = Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_CALCULATOR);
+            startActivity(intent);
         });
     }
 }
